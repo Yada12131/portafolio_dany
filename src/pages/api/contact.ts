@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import type { APIRoute } from 'astro';
-import { renderTemplate } from '../../email/renderTemplate';
+import { renderTemplate } from '../../email/templates';
 
 // Recomendado: usar App Password de Gmail (no la contraseña normal)
 // Configura en tu .env:
