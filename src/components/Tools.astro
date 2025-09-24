@@ -1,0 +1,95 @@
+---
+const tools = [
+  {
+    category: "Frontend",
+    items: [
+      { name: "React", icon: "⚛️", level: 90 },
+      { name: "Vue.js", icon: "💚", level: 85 },
+      { name: "Angular", icon: "🅰️", level: 80 },
+      { name: "Astro", icon: "🚀", level: 88 },
+      { name: "Tailwind CSS", icon: "🎨", level: 95 },
+      { name: "Sass", icon: "💄", level: 85 }
+    ]
+  },
+  {
+    category: "Backend",
+    items: [
+      { name: "Node.js", icon: "🟢", level: 90 },
+      { name: "Express", icon: "🚂", level: 88 },
+      { name: "Python", icon: "🐍", level: 85 },
+      { name: "PHP", icon: "🐘", level: 75 },
+      { name: "MongoDB", icon: "🍃", level: 82 },
+      { name: "PostgreSQL", icon: "🐘", level: 80 }
+    ]
+  },
+  {
+    category: "Herramientas",
+    items: [
+      { name: "Git", icon: "📚", level: 92 },
+      { name: "Docker", icon: "🐳", level: 78 },
+      { name: "VS Code", icon: "💻", level: 95 },
+      { name: "Figma", icon: "🎨", level: 85 },
+      { name: "Postman", icon: "📮", level: 88 },
+      { name: "Webpack", icon: "📦", level: 80 }
+    ]
+  }
+];
+---
+
+<section id="herramientas" class="py-20 px-6 bg-gray-950">
+  <div class="container mx-auto">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+        <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          Herramientas Manejadas
+        </span>
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {tools.map((category) => (
+          <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-blue-100">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
+              {category.category}
+            </h3>
+            
+            <div class="space-y-4">
+              {category.items.map((tool) => (
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-3">
+                    <span class="text-2xl">{tool.icon}</span>
+                    <span class="font-medium text-gray-700">{tool.name}</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <div class="w-20 bg-gray-200 rounded-full h-2">
+                      <div 
+                        class="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-1000"
+                        style={`width: ${tool.level}%`}
+                      ></div>
+                    </div>
+                    <span class="text-sm text-gray-600 w-8">{tool.level}%</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="mt-16 text-center">
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+          <h3 class="text-2xl font-semibold mb-4">Siempre Aprendiendo</h3>
+          <p class="text-lg opacity-90 mb-6">
+            La tecnología evoluciona constantemente, y yo evoluciono con ella. 
+            Siempre estoy explorando nuevas herramientas y mejorando mis habilidades existentes.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <span class="px-4 py-2 bg-white/20 rounded-full text-sm">Next.js</span>
+            <span class="px-4 py-2 bg-white/20 rounded-full text-sm">TypeScript</span>
+            <span class="px-4 py-2 bg-white/20 rounded-full text-sm">GraphQL</span>
+            <span class="px-4 py-2 bg-white/20 rounded-full text-sm">Rust</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

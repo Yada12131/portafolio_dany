@@ -1,0 +1,168 @@
+---
+---
+
+<section id="contacto" class="py-20 px-6 bg-gray-950">
+  <div class="container mx-auto">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+        <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          Contáctanos
+        </span>
+      </h2>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Contact Info -->
+        <div class="space-y-8">
+          <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-blue-100">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6">¡Hablemos!</h3>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              ¿Tienes un proyecto en mente? ¿Necesitas ayuda con desarrollo web? 
+              ¡Me encantaría escuchar sobre tu idea y ver cómo puedo ayudarte a hacerla realidad!
+            </p>
+            
+            <div class="space-y-4">
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                  <span class="text-white text-xl">📧</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-800">Email</div>
+                  <div class="text-gray-600">tu.email@ejemplo.com</div>
+                </div>
+              </div>
+              
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                  <span class="text-white text-xl">📱</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-800">Teléfono</div>
+                  <div class="text-gray-600">+1 (555) 123-4567</div>
+                </div>
+              </div>
+              
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                  <span class="text-white text-xl">📍</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-800">Ubicación</div>
+                  <div class="text-gray-600">Ciudad, País</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="mt-8 pt-6 border-t border-gray-200">
+              <div class="flex space-x-4">
+                <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                  <span class="text-sm font-bold">Li</span>
+                </a>
+                <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-900 transition-colors">
+                  <span class="text-sm font-bold">Gh</span>
+                </a>
+                <a href="#" class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition-colors">
+                  <span class="text-sm font-bold">Tw</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-purple-100">
+          <form class="space-y-6" id="contact-form">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                placeholder="Tu nombre completo"
+              />
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                placeholder="tu@email.com"
+              />
+            </div>
+            
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Asunto</label>
+              <input 
+                type="text" 
+                id="subject" 
+                name="subject" 
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                placeholder="¿En qué puedo ayudarte?"
+              />
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Mensaje</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="5" 
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
+                placeholder="Cuéntame sobre tu proyecto o idea..."
+              ></textarea>
+            </div>
+            
+            <button 
+              type="submit"
+              class="w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+            >
+              Enviar Mensaje
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Call to Action -->
+      <div class="mt-16 text-center">
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+          <h3 class="text-2xl font-semibold mb-4">¿Listo para comenzar tu proyecto?</h3>
+          <p class="text-lg opacity-90 mb-6">
+            Trabajemos juntos para crear algo increíble. Desde la idea inicial hasta el producto final.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#trabajos" class="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              Ver Mis Trabajos
+            </a>
+            <a href="mailto:tu.email@ejemplo.com" class="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300">
+              Enviar Email Directo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    
+    form?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Aquí puedes agregar la lógica para enviar el formulario
+      // Por ejemplo, usando un servicio como Formspree, Netlify Forms, etc.
+      
+      alert('¡Gracias por tu mensaje! Te contactaré pronto.');
+      form.reset();
+    });
+  });
+</script>

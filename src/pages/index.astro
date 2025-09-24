@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Preloader from '../components/Preloader.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import AboutMe from '../components/AboutMe.astro';
+import Projects from '../components/Projects.astro';
+import Tools from '../components/Tools.astro';
+import Languages from '../components/Languages.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Mi Portafolio - Desarrollador Web">
+  <Preloader />
+  <Header />
+  <main>
+    <Hero />
+    <AboutMe />
+    <Projects />
+    <Tools />
+    <Languages />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    scroll-behavior: smooth;
+  }
+</style>

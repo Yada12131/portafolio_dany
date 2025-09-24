@@ -1,0 +1,118 @@
+---
+const languages = [
+  { name: "JavaScript", percentage: 35, color: "from-yellow-400 to-yellow-600" },
+  { name: "TypeScript", percentage: 25, color: "from-blue-500 to-blue-700" },
+  { name: "Python", percentage: 20, color: "from-green-400 to-green-600" },
+  { name: "HTML/CSS", percentage: 15, color: "from-orange-400 to-red-500" },
+  { name: "PHP", percentage: 5, color: "from-purple-400 to-purple-600" }
+];
+---
+
+<section id="lenguajes" class="py-20 px-6 bg-gray-950">
+  <div class="container mx-auto">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+        <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          Lenguajes de Programación
+        </span>
+      </h2>
+      
+      <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-blue-100">
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Chart -->
+          <div class="relative">
+            <div class="w-64 h-64 mx-auto relative">
+              <!-- Circular progress bars -->
+              <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                <!-- Background circle -->
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#e5e7eb" stroke-width="8"/>
+                
+                <!-- Progress circles for each language -->
+                {languages.map((lang, index) => {
+                  const radius = 45 - (index * 6);
+                  const circumference = 2 * Math.PI * radius;
+                  const strokeDasharray = `${(lang.percentage / 100) * circumference} ${circumference}`;
+                  
+                  return (
+                    <circle 
+                      cx="50" 
+                      cy="50" 
+                      r={radius}
+                      fill="none" 
+                      stroke={`url(#gradient-${index})`}
+                      stroke-width="4"
+                      stroke-dasharray={strokeDasharray}
+                      stroke-linecap="round"
+                      class="transition-all duration-1000"
+                      style={`animation-delay: ${index * 0.2}s`}
+                    />
+                  );
+                })}
+                
+                <!-- Gradients -->
+                <defs>
+                  {languages.map((lang, index) => (
+                    <linearGradient id={`gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" style={`stop-color: ${lang.color.includes('yellow') ? '#fbbf24' : lang.color.includes('blue') ? '#3b82f6' : lang.color.includes('green') ? '#10b981' : lang.color.includes('orange') ? '#f97316' : '#8b5cf6'}`} />
+                      <stop offset="100%" style={`stop-color: ${lang.color.includes('yellow') ? '#d97706' : lang.color.includes('blue') ? '#1d4ed8' : lang.color.includes('green') ? '#059669' : lang.color.includes('red') ? '#dc2626' : '#7c3aed'}`} />
+                    </linearGradient>
+                  ))}
+                </defs>
+              </svg>
+              
+              <!-- Center text -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-gray-800">100%</div>
+                  <div class="text-sm text-gray-600">Dedicación</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Legend -->
+          <div class="space-y-6">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6">Distribución de Conocimientos</h3>
+            
+            {languages.map((lang, index) => (
+              <div class="flex items-center justify-between p-4 bg-white/50 rounded-xl border border-gray-200">
+                <div class="flex items-center space-x-4">
+                  <div class={`w-4 h-4 rounded-full bg-gradient-to-r ${lang.color}`}></div>
+                  <span class="font-medium text-gray-700">{lang.name}</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div class="w-24 bg-gray-200 rounded-full h-2">
+                    <div 
+                      class={`bg-gradient-to-r ${lang.color} h-2 rounded-full transition-all duration-1000`}
+                      style={`width: ${lang.percentage}%; animation-delay: ${index * 0.1}s`}
+                    ></div>
+                  </div>
+                  <span class="text-lg font-semibold text-gray-800 w-10">{lang.percentage}%</span>
+                </div>
+              </div>
+            ))}
+            
+            <div class="mt-8 p-6 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl border border-blue-200">
+              <h4 class="font-semibold text-gray-800 mb-2">Mi Enfoque Actual</h4>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Me especializo principalmente en el ecosistema JavaScript/TypeScript para desarrollo full-stack, 
+                complementado con Python para proyectos de análisis de datos y automatización.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes drawCircle {
+    from {
+      stroke-dasharray: 0 283;
+    }
+    to {
+      stroke-dasharray: var(--target-length) 283;
+    }
+  }
+</style>
