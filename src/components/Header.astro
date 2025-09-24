@@ -1,15 +1,13 @@
----
----
-
+-
 <header class="fixed top-0 w-full bg-gray-950/95 backdrop-blur-md border-b border-gray-800/50 z-50">
   <nav class="container mx-auto px-6 py-4">
     <div class="flex justify-between items-center">
-      <div class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+      <a href="#inicio" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
         Mi Portafolio
-      </div>
+      </a>
       
       <div class="hidden md:flex space-x-8">
-        <a href="#hero" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Inicio</a>
+        <a href="#inicio" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Inicio</a>
         <a href="#sobre-mi" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Sobre Mí</a>
         <a href="#trabajos" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Trabajos</a>
         <a href="#herramientas" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Herramientas</a>
@@ -43,9 +41,17 @@
   document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = mobileMenu?.querySelectorAll('a');
     
     mobileMenuBtn?.addEventListener('click', function() {
       mobileMenu?.classList.toggle('hidden');
+    });
+
+    // Cerrar menú móvil al hacer clic en un enlace
+    mobileLinks?.forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.add('hidden');
+      });
     });
   });
 </script>
